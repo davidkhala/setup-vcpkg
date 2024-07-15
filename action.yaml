@@ -1,4 +1,4 @@
-name: "@davidkhala/setup-vcpkg"
+name: "setup-vcpkg"
 
 branding:
   icon: 'package'
