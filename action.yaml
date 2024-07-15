@@ -3,7 +3,7 @@ name: "setup-vcpkg"
 branding:
   icon: 'package'
   color: 'blue'
-description: Setup vcpkg binary in context
+description: Setup vcpkg binary in windows context
  
 runs:
   using: "composite"
@@ -14,8 +14,11 @@ runs:
     - shell: cmd
       run: bootstrap-vcpkg.bat
     - shell: pwsh
-      run: set VCPKG_ROOT="$pwd"
+      run: setx VCPKG_ROOT "$pwd"
     - shell: pwsh
-      run: set Path += ";$env:VCPKG_ROOT"
-      
+      name: set current console
+      run: |
+        $env:VCPKG_ROOT = "$pwd"
+        $env:Path += ";$pwd"
+     
       
