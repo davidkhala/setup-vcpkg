@@ -1,0 +1,21 @@
+name: "setup-vcpkg"
+
+branding:
+  icon: 'package'
+  color: 'blue'
+description: Setup vcpkg binary in context
+ 
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@main
+      with:
+        repository: microsoft/vcpkg
+    - shell: cmd
+      run: bootstrap-vcpkg.bat
+    - shell: pwsh
+      run: set VCPKG_ROOT="$pwd"
+    - shell: pwsh
+      run: set Path += ";$env:VCPKG_ROOT"
+      
+      
