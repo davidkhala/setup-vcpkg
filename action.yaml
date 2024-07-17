@@ -1,4 +1,4 @@
-name: "setup-vcpkg"
+name: "setup vcpkg"
 
 branding:
   icon: 'package'
