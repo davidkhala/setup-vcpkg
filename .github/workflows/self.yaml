@@ -1,8 +1,0 @@
-name: self test
-on: push
-jobs:
- use:
-  runs-on: windows-latest
-  steps:
-  - uses: davidkhala/setup-vcpkg@main
-  
